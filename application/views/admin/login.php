@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <img src="<?= base_url() ?>assets/login/images/logo.png" width="50%">
                   <h3>Sign In to <strong>My Dental Buy & Sell</strong></h3>
                 </div>
-                <form action="<?= base_url('login'); ?>" method="post">
+                <form action="<?= base_url('Login'); ?>" method="post">
                   <div class="row">
                     <?php if($this->session->flashdata()){
                       ?>

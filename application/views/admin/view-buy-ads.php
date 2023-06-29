@@ -22,10 +22,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="col-lg-12">
                     <div class="main-card mb-3 card">
                         <div class="card-body"><h5 class="card-title">Pending ads list</h5>
-                            <table class="mb-0 table table-bordered approve-ads">
+                            <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>So.</th>
+                                        <th>Sr.</th>
                                         <th>Ads title</th>
                                         <th>Ads Desciption</th>
                                         <th>Price</th>
@@ -34,39 +34,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php $sr=1; foreach($user_list as $row) { ?>
+                                     <?php $status=$row->status;if($status==1){ ?>
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark sodales cursus sit amet a nulla. Sed neque odio, viverra non ultricies at,</td>
-                                        <td>Praesent mollis consectetur tortor. Cras ultricies purus et diam feugiat vulputate. Maecenas at libero ut velit sodales cursus sit amet a nulla. Sed neque odio, viverra non ultricies at,</td>
-                                        <td>$49</td>
-                                        <td><button class="mb-2 mr-2 btn btn-success active">View
-                                        </button></td>
-                                        <td><button class="mb-2 mr-2 btn btn-primary active">Disapprove
-                                        </button><button class="mb-2 mr-2 btn btn-danger active">Delete
-                                        </button></td>
+                                        <td><?php echo $sr;?></td>
+                                        <td><?php echo $row->name;?></td>
+                                        <td><?php echo $row->description;?></td>
+                                        <td><?php echo $row->price;?></td>
+                                        <td><a href="<?php echo site_url("Buy/buy_detail")?>" type="button" class="mb-2 mr-2 btn btn-primary active">view</a></td>
+                                        <td><a href="<?php echo site_url("Buy/update/$row->id")?>" type="button" class="mb-2 mr-2 btn btn-primary active" >Update</a><a href="<?php echo site_url("Buy/delete/$row->id")?>"type="button" class="mb-2 mr-2 btn btn-danger active">Delete</a></td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob sodales cursus sit amet a nulla. Sed neque odio, viverra non ultricies at,</td>
-                                        <td>Thornton Praesent mollis consectetur tortor. Cras ultricies purus et diam feugiat vulputate. Maecenas at libero ut velit sodales cursus sit amet a nulla. Sed neque odio, viverra non ultricies at,</td>
-                                        <td>$123</td>
-                                        <td><button class="mb-2 mr-2 btn btn-success active">View
-                                        </button></td>
-                                        <td><button class="mb-2 mr-2 btn btn-primary active">Disapprove
-                                        </button><button class="mb-2 mr-2 btn btn-danger active">Delete
-                                        </button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry sodales cursus sit amet a nulla. Sed neque odio, viverra non ultricies at,</td>
-                                        <td>the Bird Praesent mollis consectetur tortor. Cras ultricies purus et diam feugiat vulputate. Maecenas at libero ut velit sodales cursus sit amet a nulla. Sed neque odio, viverra non ultricies at,</td>
-                                        <td>$334</td>
-                                        <td><button class="mb-2 mr-2 btn btn-success active">View
-                                        </button></td>
-                                        <td><button class="mb-2 mr-2 btn btn-primary active">Disapprove
-                                        </button><button class="mb-2 mr-2 btn btn-danger active">Delete
-                                        </button></td>
-                                    </tr>
+                                     <?php $sr++; }} ?> 
                                 </tbody>
                             </table>
                         </div>

@@ -22,10 +22,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="col-lg-12">
                     <div class="main-card mb-3 card">
                         <div class="card-body"><h5 class="card-title">Pending ads list</h5>
-                            <table class="mb-0 table table-bordered approve-ads">
+                            <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>So.</th>
+                                        <th>Sr.</th>
                                         <th>Dealer Id</th>
                                         <th>Dealer Name</th>
                                         <th>Ads title</th>
